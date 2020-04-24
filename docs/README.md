@@ -156,10 +156,40 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | Option | Start (5s) |
 
 ### Émulation Atari
-| | Menu | Description |
-|-|-------|-------------|
-| | Player 1 | Player 2 |
-| Fire | B1 | B1 |
+| Menu           | Description |          |
+|----------------|-------------|----------|
+|                | Player 1    | Player 2 |
+| Fire           | B1          | B1       |
+| Barre d'espace | B2          |          |
+| Touche "F1"    | B3          |          |
+| Touche "F2"    |             | B3       |
+| Touche "T"     | B4          |          |
+| Touche "Y"     | B5          |          |
+| Touche "N"     | B6          |          |
+| Touche "1"     | Start       |          |
+| Touche "2"     |             | Start    |
+
+### Émulateurs arcades
+Le bouton de service et le monnayeur de la borne ont leurs fonctions normales.
+
+## Options avancées
+### Réseau
+#### Ethernet
+Connectez un câble RJ45 entre le RPi et votre box Internet, celle-ci attribuera automatiquement une adresse IP au RPI2JAMMA (via le protocole DHCP).
+#### WiFi
+Éditez le fichier wifi_config.txt dans le dossier Config_RPI2XXXXX qui se trouve à la racine de la clé USB puis modifiez les deux lignes suivantes :
+```
+psk="la_clé_de_votre_réseau_wifi"
+ssid="le_nom_de_votre_réseau_wifi"
+```
+Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ (Edition > Convertir les sauts de ligne > Convertir en format Unix)
+Puis activez le wifi dans le menu principal : 08_WIFI.
+
+### Ajout de roms
+#### Via le réseau
+Depuis votre ordinateur, saisissez \\RPI2JAMMA\UsbKey\roms dans l'explorateur Windows. Ajoutez des ROMs dans le dossier correspondant à l'émulateur de votre choix puis redémarrez le RPI2JAMMA afin de mettre à jour la liste des ROMs.
+#### Via la clé USB
+Éteignez le RPI2JAMMA puis débranchez la clé USB. Branchez-là sur votre ordinateur puis ajoutez des ROMs dans le dossier correspondant à l'émulateur de votre choix. Débranchez proprement la clé USB de votre ordinateur puis branchez-là sur le RPI2JAMMA, pour finir démarrez le RPI2JAMMA.
 
 ## Horizontal Rules
 
