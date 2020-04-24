@@ -110,13 +110,9 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 |------|-------------|
 | 01_Shutdown | Éteindre le RPI2JAMMA |
 | 02_Restart System | Redémarrer le RPI2JAMMA |
-| 03_Screen | **AdvanceMAME Config**<br>Configurer la sortie vidéo de l'émulateur AdvanceMAME<br>
-**Display test**<br>Afficher des mires de test.<br>
-**Switch to Horizontal**<br>Basculer vers l'affichage horizontal (Yoko)<br>
-**Switch to Vertical**<br>Basculer vers l'affichage vertical (Tate)<br>
-**Switch to Vertical (inversed)**<br>Basculer vers l'affichage vertical (Tate) inversé |
-| 04_Tools | **Clear Game Database**<br>Effacer la base de donnée des jeux
-<br>**Install Update Patch**<br>Permet d’installer un patch de mise à jour (si disponible) |
+| 03_Screen | <p>**AdvanceMAME Config**<br>Configurer la sortie vidéo de l'émulateur AdvanceMAME<br>**Display test**<br>Afficher des mires de test.<br>**Switch to Horizontal**<br>Basculer vers l'affichage horizontal (Yoko)<br>**Switch to Vertical**<br>Basculer vers l'affichage vertical (Tate)<br>**Switch to Vertical (inversed)**<br>Basculer vers l'affichage vertical (Tate) inversé</p> |
+| 04_Tools | <p>**Clear Game Database**<br>Effacer la base de donnée des jeux<br>**Install Update Patch**<br>Permet d’installer un patch de mise à jour (si disponible)</p> |
+
 ## Horizontal Rules
 
 ___
