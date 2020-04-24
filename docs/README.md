@@ -65,6 +65,58 @@ Quelle que soit la capacité de la clé USB, l'utilitaire "gparted" permet de la
 Vos périphériques de stockage (MicroSD et clé USB) sont prêts à être installés, vous pouvez passer à l'étape suivante.
 
 
+## Installation matérielle
+
+* Insérez la carte MicroSD dans le RPi
+* Insérez la clé USB dans un des ports USB du RPi
+* Couplez le RPi à la carte RPI2JAMMA via les connecteurs GPIO respectifs. Le port MicroSD du RPi doit être orienté vers le port JAMMA. Veillez à bien aligner les broches et donc à ne pas les décaler.
+
+Votre RPI2JAMMA est maintenant prêt à l'utilisation, bien sûr vous pouvez l'installer correctement sur un support (planche en bois, plexiglas etc.) avec des pieds de PCB.
+
+## Prise en main
+
+### Prérequis
+
+Votre borne doit être conforme au standard JAMMA (non modifié de manière exotique). La tension délivrée par le peigne JAMMA (entre les pin 1 & 3 ou 1 & 4) doit être située entre 5v et 5,25v maximum.
+Si vous ne passez pas le son par le JAMMA, connectez les HP de votre borne sur le connecteur « Konami » ou « Egret ».
+Si vous utilisez plus de 3 boutons, connectez les "Kick Harness" (format CPS1).
+Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness" si plus de 3 boutons).
+
+### Mise en route
+
+* Branchez le RPI2JAMMA sur le port JAMMA de votre borne
+* Sélectionnez la sortie son HP ou JAMMA avec l’interrupteur
+* Sélectionnez le son Mono ou Stéréo avec l’interrupteur. Normalement en Mono si par le peigne JAMMA (sauf si câblé MVS)
+* Allumez la borne
+* Le RPI2JAMMA démarre et créé les répertoires nécessaires sur la clé USB
+* Le menu principal doit s'afficher, si ce n'est pas le cas reportez-vous à la section "Dépannage"
+* Sélectionnez "Settings" puis "01_Shutdown" et attendez quelques secondes avant d'éteindre la borne.
+* Récupérez la clé USB et installez des ROMs dans les répertoires adéquats (snes, nes, neogeo etc.). Pour les émulateurs de jeux d'arcade les versions de "romset" sont précisées dans la FAQ ou dans le fichier “__Emulators_version__.txt” du répertoire “Config_RPI2XXXXX”. 
+* Rebranchez la clé USB dans le RPi et rallumez votre borne
+* Borne allumée, vérifiez à nouveau la tension de 5v
+
+### Extinction
+
+* Quitter le jeu en cours
+* Revenir au menu principal (accueil)
+* Sélectionner « Settings »
+* Sélectionner « Shutdown »
+* Attendre quelques secondes
+* Éteindre la borne.
+
+## Menu principal
+
+| Menu | Description |
+|------|-------------|
+| 01_Shutdown | Éteindre le RPI2JAMMA |
+| 02_Restart System | Redémarrer le RPI2JAMMA |
+| 03_Screen | **AdvanceMAME Config**<br>Configurer la sortie vidéo de l'émulateur AdvanceMAME<br>
+              **Display test**<br>Afficher des mires de test.<br>
+              **Switch to Horizontal**<br>Basculer vers l'affichage horizontal (Yoko)<br>
+              **Switch to Vertical**<br>Basculer vers l'affichage vertical (Tate)<br>
+              **Switch to Vertical (inversed)**<br>Basculer vers l'affichage vertical (Tate) inversé|
+| 04_Tools | **Clear Game Database**<br>Effacer la base de donnée des jeux|
+
 ## Horizontal Rules
 
 ___
