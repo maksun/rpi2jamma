@@ -156,8 +156,8 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | Option | Start (5s) |
 
 ### Émulation Atari
-| Menu | Description |
-|------|-------------|
+| | Menu | Description |
+|-|-------|-------------|
 | | Player 1 | Player 2 |
 | Fire | B1 | B1 |
 
