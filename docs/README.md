@@ -135,6 +135,32 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | Options (sur un jeu) | B4 |
 | Menu EmulationStation | Start |
 
+### En jeu
+| Menu | Description |
+|------|-------------|
+| Quitter | Start (0,5s) + B2 |
+| Créditer | Start (0,5s) + B1 |
+| Pause | Start (0,5s) + Bas |
+| Volume - / + | Start (0,5s) + Gauche / Droite |
+| Options émulateur | Start P1 (5s) |
+| Test mode | Start P2 (5s) |
+| Menu UniBios (Neo Geo) | Start P1 (0,5s) + B1 + B2 + B3 |
+
+### Émulation Amstrad
+| Menu | Description |
+|------|-------------|
+| Touche "Enter" | Start |
+| Barre d'espace | B4 |
+| Touche "Y" | B5 |
+| Touche "N" | B6 |
+| Option | Start (5s) |
+
+### Émulation Atari
+| Menu | Description |
+|------|-------------|
+| | Player 1 | Player 2 |
+| Fire | B1 | B1 |
+
 ## Horizontal Rules
 
 ___
