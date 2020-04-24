@@ -4,11 +4,65 @@ Le RPI2JAMMA est une carte permettant de connecter un Raspberry Pi (RPi) sur une
 
 Cette carte a été créée, fabriquée et distribuée par « aje_fr ». Elle se destine à un usage de loisir privé et n’est en aucun cas destinée à une utilisation en exploitation commerciale ou à un commerce de revente.
 
+## Spécifications
 
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+* Le RPi est alimenté par le port JAMMA
+* Sortie RVB 18 bits, 15khz, 24khz (les menus sont en 15khz et si un jeu 24khz est lancé, le système bascule en 24khz)
+* Affichage horizontal (yoko) ou vertical (tate)
+* "Pixel Perfect", chaque jeu utilise sa propre modeline donc résolution et fréquence de rafraîchissement respectées
+* Pas de tearing !
+* Ampli stéréo intégré
+* Interrupteur pour le choix Mono / Stéreo
+* Interrupteur pour le choix de la sortie HP ou sur JAMMA
+* Connecteurs pour HP externes 4 points (format Konami) ou 6 points (Egret 3 par ex.)
+* Réglage numérique du volume et balance par bouton. Une led indique le mode (balance ou volume). Volume accessible également via un raccourci (voir "Contrôles")
+* Jusqu'à 4 joueurs !
+* Kick harness au format CPS1 pour les boutons 4, 5, 6 des 4 joueurs (les boutons 4 et 5 des joueurs 1 et 2 aussi disponibles sur le peigne JAMMA)
+* Connecteurs 15 points (format Konami) pour joueurs 3 et 4
+* Optimisé pour RPi3b+, RPi3 et RPi2.
+
+## Schéma de présentation
+
+IMAGE
+
+## Les différents connecteurs
+
+IMAGE
+
+## Matériel nécessaire
+
+* Une carte RPI2JAMMA
+* Un RPi (RPi3b+ ou RPi3 conseillé pour de bonnes performances)
+* Une carte MicroSD de 4Go minimum (classe 10 de préférence)
+* Une clé USB (bon débit en USB2 conseillé)
+* Un ordinateur (Windows / OSX / Linux)
+* Un multimètre (fortement conseillé)
+
+## Installation logicielle
+
+### Système (MicroSD)
+
+* Téléchargez l'image de la distribution depuis le lien fourni par aje_fr
+* Décompressez l'archive pour extraire l'image (fichier .img)
+* Téléchargez "Etcher" (Windows, OSX et Linux) disponible ici ou “Win32diskimager” disponible ici
+* Flashez l'image sur la carte MicroSD avec "Etcher" ou “Win32diskimager”
+
+### Stockage (Clé USB)
+
+Formatez la clé USB en FAT32 de préférence (voir ci-dessous), en exFat ou NTFS. Les autres systèmes de fichier ne sont pas supportés.
+
+#### Windows
+
+Pour les clés USB de capacité inférieure ou égale à 32 Go un simple clic-droit sur le lecteur concerné permettra de formater la clé en FAT32. Pour les clés USB de capacité supérieure à 32 Go il faudra utiliser "fat32format" ou un logiciel équivalent.
+
+#### OSX
+
+Quelle que soit la capacité de la clé USB, l'utilitaire de disque natif permet de la formater en FAT32. Il faut utiliser l'onglet "Partition" et bien choisir "Master Boot Record" lorsque l'assistant le propose.
+
+#### Linux
+Quelle que soit la capacité de la clé USB, l'utilitaire "gparted" permet de la formater en FAT32.
+
+Vos périphériques de stockage (MicroSD et clé USB) sont prêts à être installés, vous pouvez passer à l'étape suivante.
 
 
 ## Horizontal Rules
