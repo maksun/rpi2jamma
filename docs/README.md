@@ -52,11 +52,9 @@ IMAGE
 Formatez la clé USB en FAT32 de préférence (voir ci-dessous), en exFat ou NTFS. Les autres systèmes de fichier ne sont pas supportés.
 
 #### Windows
-
 Pour les clés USB de capacité inférieure ou égale à 32 Go un simple clic-droit sur le lecteur concerné permettra de formater la clé en FAT32. Pour les clés USB de capacité supérieure à 32 Go il faudra utiliser "fat32format" ou un logiciel équivalent.
 
 #### OSX
-
 Quelle que soit la capacité de la clé USB, l'utilitaire de disque natif permet de la formater en FAT32. Il faut utiliser l'onglet "Partition" et bien choisir "Master Boot Record" lorsque l'assistant le propose.
 
 #### Linux
@@ -76,14 +74,12 @@ Votre RPI2JAMMA est maintenant prêt à l'utilisation, bien sûr vous pouvez l'i
 ## Prise en main
 
 ### Prérequis
-
 Votre borne doit être conforme au standard JAMMA (non modifié de manière exotique). La tension délivrée par le peigne JAMMA (entre les pin 1 & 3 ou 1 & 4) doit être située entre 5v et 5,25v maximum.
 Si vous ne passez pas le son par le JAMMA, connectez les HP de votre borne sur le connecteur « Konami » ou « Egret ».
 Si vous utilisez plus de 3 boutons, connectez les "Kick Harness" (format CPS1).
 Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness" si plus de 3 boutons).
 
 ### Mise en route
-
 * Branchez le RPI2JAMMA sur le port JAMMA de votre borne
 * Sélectionnez la sortie son HP ou JAMMA avec l’interrupteur
 * Sélectionnez le son Mono ou Stéréo avec l’interrupteur. Normalement en Mono si par le peigne JAMMA (sauf si câblé MVS)
@@ -96,7 +92,6 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 * Borne allumée, vérifiez à nouveau la tension de 5v
 
 ### Extinction
-
 * Quitter le jeu en cours
 * Revenir au menu principal (accueil)
 * Sélectionner « Settings »
@@ -105,7 +100,6 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 * Éteindre la borne.
 
 ## Menu principal
-
 | Menu | Description |
 |------|-------------|
 | 01_Shutdown | Éteindre le RPI2JAMMA |
@@ -120,20 +114,19 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 
 ## Contrôles
 ### Légende
-
-| Menu | Description |
-|------|-------------|
-| Player 1 / 2 / 3 / 4 | P1 / P2 / P3 / P4 |
-| Bouton 1 / 2 / 3 / 4 | B1 / B2 / B3 / B4 |
-| Start (0,5s) | Appui long Start (0,5s minimum) |
+| Menu                 | Description                     |
+|----------------------|---------------------------------|
+| Player 1 / 2 / 3 / 4 | P1 / P2 / P3 / P4               |
+| Bouton 1 / 2 / 3 / 4 | B1 / B2 / B3 / B4               |
+| Start (0,5s)         | Appui long Start (0,5s minimum) |
 
 ### Dans les menus
-| Menu | Description |
-|------|-------------|
-| Valider | B1 |
-| Retour | B2 |
-| Options (sur un jeu) | B4 |
-| Menu EmulationStation | Start |
+| Menu                  | Description |
+|-----------------------|-------------|
+| Valider               | B1          |
+| Retour                | B2          |
+| Options (sur un jeu)  | B4          |
+| Menu EmulationStation | Start       |
 
 ### En jeu
 | Menu | Description |
@@ -188,8 +181,58 @@ Puis activez le wifi dans le menu principal : 08_WIFI.
 ### Ajout de roms
 #### Via le réseau
 Depuis votre ordinateur, saisissez \\RPI2JAMMA\UsbKey\roms dans l'explorateur Windows. Ajoutez des ROMs dans le dossier correspondant à l'émulateur de votre choix puis redémarrez le RPI2JAMMA afin de mettre à jour la liste des ROMs.
+
 #### Via la clé USB
 Éteignez le RPI2JAMMA puis débranchez la clé USB. Branchez-là sur votre ordinateur puis ajoutez des ROMs dans le dossier correspondant à l'émulateur de votre choix. Débranchez proprement la clé USB de votre ordinateur puis branchez-là sur le RPI2JAMMA, pour finir démarrez le RPI2JAMMA.
+
+### BIOS Neo Geo
+Le pack Neo Geo proposé sur le forum Neo-Arcadia fournit les différents BIOS (dans le répertoire "BIOS") et propose par défaut un BIOS de type "unibios".
+Si vous souhaitez en utiliser un autre, renommez simplement le fichier du BIOS choisi en "neogeo.zip" et prenez soin au préalable de renommer le fichier correspondant au bios actuel pour ne pas le perdre (ex : neogeo_UNIBIOS.zip).
+
+### Autoboot
+L'autoboot permet de lancer un jeu automatiquement au démarrage du RPI2JAMMA. Modifiez le fichier autoboot.txt dans le dossier Config_RPI2XXXXX qui se trouve à la racine de la clé USB.
+Le fichier doit contenir les deux lignes suivantes :
+```
+system=nom_du_système (nom du dossier)
+game=nom_du_jeu (avec extension)
+```
+Exemple avec le jeu Metal Slug sur Neo Geo :
+```
+system=neogeo
+game=mslug.zip
+```
+Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ (Edition > Convertir les sauts de ligne > Convertir en format Unix).
+
+### RetroAchievements
+Les retroachievements sont des succès/trophées à débloquer en jeu en réalisant certaines actions. Ce système est connu sur les consoles de nouvelle génération et grâce à la plateforme https://retroachievements.org il est possible de faire la même chose avec les jeux "rétro".
+
+Prérequis :
+* Créer un compte sur le site https://retroachievements.org
+* Connecter votre RPI2XXXXX à internet
+
+Modifiez le fichier RetroAchievements.txt dans le dossier Config_RPI2XXXXX qui se trouve à la racine de la clé USB.
+Le fichier doit contenir les lignes suivantes :
+```
+cheevos_enable = "false"
+cheevos_test_unofficial = "false"
+cheevos_hardcore_mode_enable = "false"
+cheevos_username = ""
+cheevos_password = ""
+```
+
+#### Description
+| Option           | Description                                                           |
+|------------------|-----------------------------------------------------------------------|
+| cheevo_enable    | ```"true"|"false"```Activer/Désactiver la fonction retroachievements. |
+| cheevos_test_unofficial (true ou false) | Activer/Désactiver les retroachievements non officiels. Ces derniers ne rapportent aucun point. Cette fonction existe à des fins de test et est plutôt réservée à ceux qui développent les retroachievements.                                                                         |
+| cheevos_hardcore_mode_enable (true ou false) | Activer/Désactiver le mode Hardcore. Lorsqu'il est actif toutes les fonctions comme le ralenti, les codes de triche et les savestates sont désactivées. L'expérience de jeu est alors identique au système original et l'avantage est que vos points sont doublés.                         |
+| cheevos_username | Saisir votre nom d'utilisateur.                                       |
+| cheevos_password | Saisir votre mot de passe.                                            |
+
+
+
+
+
 
 ## Horizontal Rules
 
