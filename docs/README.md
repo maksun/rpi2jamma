@@ -110,14 +110,30 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 |------|-------------|
 | 01_Shutdown | Éteindre le RPI2JAMMA |
 | 02_Restart System | Redémarrer le RPI2JAMMA |
-| 03_Screen | <p>**AdvanceMAME Config**<br>Configurer la sortie vidéo de l'émulateur AdvanceMAME<br>
-                 **Display test**<br>Afficher des mires de test.<br>
-                 **Switch to Horizontal**<br>Basculer vers l'affichage horizontal (Yoko)<br>
-                 **Switch to Vertical**<br>Basculer vers l'affichage vertical (Tate)<br>
-                 **Switch to Vertical (inversed)**<br>Basculer vers l'affichage vertical (Tate) inversé</p> |
+| 03_Screen | <p>**AdvanceMAME Config**<br>Configurer la sortie vidéo de l'émulateur AdvanceMAME<br>**Display test**<br>Afficher des mires de test.<br>**Switch to Horizontal**<br>Basculer vers l'affichage horizontal (Yoko)<br>**Switch to Vertical**<br>Basculer vers l'affichage vertical (Tate)<br>**Switch to Vertical (inversed)**<br>Basculer vers l'affichage vertical (Tate) inversé</p> |
 | 04_Tools | <p>**Clear Game Database**<br>Effacer la base de donnée des jeux<br>**Install Update Patch**<br>Permet d’installer un patch de mise à jour (si disponible)<br>**Scrap All Roms**<br>"Scrapper" toutes les ROMs<br>**erify USB Key**<br>Vérifier et corriger les éventuelles erreurs du système de fichier de la clé USB</p> |
 | 05_NeoGeo | <p>**Switch to AES mode**<br>Basculer l'émulateur Neo Geo en mode AES (console)<br>**Switch to MVS mode**<br>Basculer l'émulateur Neo Geo en mode MVS (arcade)</p> |
-| 06_Amiga |
+| 06_Amiga | <p>**Scan for Roms**<br>Permet de scanner les ROMs amiga et créer les fichiers de configuration adéquats (jeux multi-disques par exemple)</p> |
+| 07_Extras | <p>**01_MalditaCastilla**<br>Lancer le jeu MalditaCastilla<br>**02_SuperCrateBox**<br>Lancer le jeu SuperCrateBox</p> |
+| 08_WIFI | <p>**Disable**<br>Désactiver la fonction Wi-Fi du RPI2JAMMA<br>**Enable**<br>Activer la fonction Wi-Fi du RPI2JAMMA<p> |
+| 09_Info | <p>Affiche la version courante des émulateurs et des romsets</p> |
+
+## Contrôles
+### Légende
+
+| Menu | Description |
+|------|-------------|
+| Player 1 / 2 / 3 / 4 | P1 / P2 / P3 / P4 |
+| Bouton 1 / 2 / 3 / 4 | B1 / B2 / B3 / B4 |
+| Start (0,5s) | Appui long Start (0,5s minimum) |
+
+### Dans les menus
+| Menu | Description |
+|------|-------------|
+| Valider | B1 |
+| Retour | B2 |
+| Options (sur un jeu) | B4 |
+| Menu EmulationStation | Start |
 
 ## Horizontal Rules
 
