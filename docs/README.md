@@ -72,12 +72,16 @@ Vos périphériques de stockage (MicroSD et clé USB) sont prêts à être insta
 * Insérez la clé USB dans un des ports USB du RPi
 * Couplez le RPi à la carte RPI2JAMMA via les connecteurs GPIO respectifs. Le port MicroSD du RPi doit être orienté vers le port JAMMA. Veillez à bien aligner les broches et donc à ne pas les décaler.
 
-Votre RPI2JAMMA est maintenant prêt à l'utilisation, bien sûr vous pouvez l'installer correctement sur un support (planche en bois, plexiglas etc.) avec des pieds de PCB.
+Votre RPI2JAMMA est maintenant prêt à l'utilisation, si vous le souhaitez vous pouvez l'installer avec des pieds de PCB sur un support (planche en bois, plexiglas etc.).
 
 ## Prise en main
 
 ### Prérequis
-Votre borne doit être conforme au standard JAMMA (non modifié de manière exotique). La tension délivrée par le peigne JAMMA (entre les pin 1 & 3 ou 1 & 4) doit être située entre 5v et 5,25v maximum.
+
+!!! Warning
+    La tension délivrée par le peigne JAMMA (entre les pin 1 & 3 ou 1 & 4) doit être située entre 5v et 5,25v maximum.
+
+Votre borne doit être conforme au standard JAMMA (non modifié de manière exotique).
 Si vous ne passez pas le son par le JAMMA, connectez les HP de votre borne sur le connecteur « Konami » ou « Egret ».
 Si vous utilisez plus de 3 boutons, connectez les "Kick Harness" (format CPS1).
 Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness" si plus de 3 boutons).
