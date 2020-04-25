@@ -219,18 +219,78 @@ cheevos_hardcore_mode_enable = "false"
 cheevos_username = ""
 cheevos_password = ""
 ```
+Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ (Edition > Convertir les sauts de ligne > Convertir en format Unix).
 
-#### Description
-| Option           | Description                                                           |
-|------------------|-----------------------------------------------------------------------|
-| cheevo_enable    | ```"true"|"false"```Activer/Désactiver la fonction retroachievements. |
-| cheevos_test_unofficial (true ou false) | Activer/Désactiver les retroachievements non officiels. Ces derniers ne rapportent aucun point. Cette fonction existe à des fins de test et est plutôt réservée à ceux qui développent les retroachievements.                                                                         |
-| cheevos_hardcore_mode_enable (true ou false) | Activer/Désactiver le mode Hardcore. Lorsqu'il est actif toutes les fonctions comme le ralenti, les codes de triche et les savestates sont désactivées. L'expérience de jeu est alors identique au système original et l'avantage est que vos points sont doublés.                         |
-| cheevos_username | Saisir votre nom d'utilisateur.                                       |
-| cheevos_password | Saisir votre mot de passe.                                            |
+| Option                       | Description                                                           |
+|------------------------------|-----------------------------------------------------------------------|
+| cheevo_enable                | ```"true|false"``` Activer/Désactiver la fonction retroachievements.  |
+| cheevos_test_unofficial      | ```"true|false"``` Activer/Désactiver les retroachievements non officiels. Ces derniers ne rapportent aucun point. Cette fonction existe à des fins de test et est plutôt réservée à ceux qui développent les retroachievements.                                                                                     |
+| cheevos_hardcore_mode_enable | ```"true|false"``` Activer/Désactiver le mode Hardcore. Lorsqu'il est actif toutes les fonctions comme le ralenti, les codes de triche et les savestates sont désactivées. L'expérience de jeu est alors identique au système original et l'avantage est que vos points sont doublés.                                     |
+| cheevos_username             | Saisir votre nom d'utilisateur.                                       |
+| cheevos_password             | Saisir votre mot de passe.                                            |
 
+### Header Interactif (option en développement)
+Le RPI2JAMMA offre la possibilité d'avoir un "header" intéractif en connectant un écran additionel à l'aide d'un adaptateur "USB vers DVI" ou "USB vers VGA" compatible avec la norme __"DisplayLink"__. Les médias affichés seront ceux des jeux contenus sur la clé USB.
 
+### Jouer à un jeu vertical sur un écran horizontal
+Commentez la modeline correspondante dans le fichier "modeline.txt" situé dans le répertoire du système concerné. Commenter signifie simplement ajouter un # en début de ligne, exemple :
+```
+# mslug.zip;modeline "320x224_59.185606" 6.136900 [...]
+```
 
+### Lecteur vidéo
+Un lecteur vidéo existe (.avi .AVI .mkv .MKV), il suffit de mettre des vidéos dans le répertoire __Videos__ situé à la racine de la clé USB.
+
+### Changer le thème du menu
+Depuis le menu EmulationStation, allez dans "UI Settings > Theme Set" puis choisissez le thème (voir tableau ci-dessous).
+
+| Thème               | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| ES-THEME-CLEAN-LOOK | Thème de base EmulationStation (inutile ici)                                |
+| RPI2X_TATE          | Previews image 1:1 (extrait d’image "PixelPerfect") pour écran vertical.    |
+| RPI2X_TATE43        | Previews vidéo image complète 4:3 pour écran vertical.                      |
+| RPI2X_YOKO          | Previews image 1:1 (extrait d’image "PixelPerfect" ) pour écran horizontal. |
+| RPI2X_YOKO43        | Previews vidéo ou image complète 4:3 pour écran horizontal.                 |
+
+Pour afficher les images correspondantes à la place des vidéos, renommer le dossier __video__ avec un autre nom.
+
+### Activer le mode kiosq ou kid
+Depuis le menu EmulationStation, allez dans "UI Settings > UI MODE" 
+
+| Option | Description                                                    |
+|--------|----------------------------------------------------------------|
+| kiosq  | Menu EmulationStation bloqué, édition des favoris disponible   |
+| kid    | Menu EmulationStation bloqué, édition des favoris indisponible |
+
+Pour débloquer l'accès au menu EmulationStation, faire le Konami Code dans le menu.
+
+### Fonctionnement des médias
+Dans chaque répertoire dédié à un émulateur il y a quatre répertoires :
+
+* __videos__       : previews vidéo (compatible avec les thèmes RPI2X_YOKO43 et RPI2X_TATE43)
+* __images_full__  : previews images 4:3 (compatible avec les thèmes RPI2X_YOKO43 et RPI2X_TATE43)
+* __images_pixel__ : previews images 1:1 (compatible avec les thèmes RPI2X_YOKO et RPI2X_TATE)
+* **_old_medias**  : anciens médias previews (compatible avec la version logicielle B11 et inférieure)
+
+Il y a également un fichier ```gamelist.xml``` qui indexe les médias associés aux ROMs. L'indexation est renseignée de la manière suivante :
+```
+<game>
+<name>Nom du jeu</name>
+<path>Chemin d'accès de la rom</path>
+<image>chemin d'accès de l'image 1:1</image>
+<marquee>chemin d'accès de l'image 4:3</marquee>
+<video>chemin d'accès de la video preview</video>
+<desc>description (éditeur / année / nbr joueurs</desc>
+<screen>résolution</screen>
+<orientation>yoko/tate</orientation>
+</game>
+```
+
+Lorsqu'on utilise le thème RPI2X_YOKO43 ou RPI2X_TATE43, si le dossier "videos" existe il sera prioritaire : les vidéos présentes à l'intérieur et indiquées entre les balises ```<video></video>``` seront donc affichées en preview.
+
+Si le dossier "videos" n'existe pas ou s'il a été renommé : les images présentes dans le dossier "images_full" et indiquées entre les balises ```<marquee></marquee>``` seront affichées en preview. En résumé, les balises ```<image></image>``` ne sont pas utilisées avec les thèmes RPI2X_YOKO43 et RPI2X_TATE43.
+
+Lorsqu'on utilise le thème RPI2X_YOKO ou RPI2X_TATE seules les images présentes dans le dossier "images_pixel" et indiquées entre les balises ```<image></image>``` seront utilisées. En résumé, il n'y a pas de preview vidéo avec les thèmes RPI2X_YOKO ou RPI2X_TATE.
 
 
 
