@@ -113,14 +113,14 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | 09_Info | <p>Affiche la version courante des émulateurs et des romsets</p> |
 
 ## Contrôles
-### Légende
+#### Légende
 | Menu                 | Description                     |
 |----------------------|---------------------------------|
 | Player 1 / 2 / 3 / 4 | P1 / P2 / P3 / P4               |
 | Bouton 1 / 2 / 3 / 4 | B1 / B2 / B3 / B4               |
 | Start (0,5s)         | Appui long Start (0,5s minimum) |
 
-### Dans les menus
+#### Dans les menus
 | Menu                  | Description |
 |-----------------------|-------------|
 | Valider               | B1          |
@@ -128,7 +128,7 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | Options (sur un jeu)  | B4          |
 | Menu EmulationStation | Start       |
 
-### En jeu
+#### En jeu
 | Menu | Description |
 |------|-------------|
 | Quitter | Start (0,5s) + B2 |
@@ -139,7 +139,7 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | Test mode | Start P2 (5s) |
 | Menu UniBios (Neo Geo) | Start P1 (0,5s) + B1 + B2 + B3 |
 
-### Émulation Amstrad
+#### Émulation Amstrad
 | Menu | Description |
 |------|-------------|
 | Touche "Enter" | Start |
@@ -148,7 +148,7 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | Touche "N" | B6 |
 | Option | Start (5s) |
 
-### Émulation Atari
+#### Émulation Atari
 | Menu           | Description |          |
 |----------------|-------------|----------|
 |                | Player 1    | Player 2 |
@@ -162,14 +162,14 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | Touche "1"     | Start       |          |
 | Touche "2"     |             | Start    |
 
-### Émulateurs arcades
+#### Émulateurs arcades
 Le bouton de service et le monnayeur de la borne ont leurs fonctions normales.
 
 ## Options avancées
-### Réseau
-#### Ethernet
+#### Réseau
+##### Ethernet
 Connectez un câble RJ45 entre le RPi et votre box Internet, celle-ci attribuera automatiquement une adresse IP au RPI2JAMMA (via le protocole DHCP).
-#### WiFi
+##### WiFi
 Éditez le fichier wifi_config.txt dans le dossier Config_RPI2XXXXX qui se trouve à la racine de la clé USB puis modifiez les deux lignes suivantes :
 ```
 psk="la_clé_de_votre_réseau_wifi"
@@ -178,18 +178,18 @@ ssid="le_nom_de_votre_réseau_wifi"
 Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ (Edition > Convertir les sauts de ligne > Convertir en format Unix)
 Puis activez le wifi dans le menu principal : 08_WIFI.
 
-### Ajout de roms
-#### Via le réseau
+#### Ajout de roms
+##### Via le réseau
 Depuis votre ordinateur, saisissez \\RPI2JAMMA\UsbKey\roms dans l'explorateur Windows. Ajoutez des ROMs dans le dossier correspondant à l'émulateur de votre choix puis redémarrez le RPI2JAMMA afin de mettre à jour la liste des ROMs.
 
-#### Via la clé USB
+##### Via la clé USB
 Éteignez le RPI2JAMMA puis débranchez la clé USB. Branchez-là sur votre ordinateur puis ajoutez des ROMs dans le dossier correspondant à l'émulateur de votre choix. Débranchez proprement la clé USB de votre ordinateur puis branchez-là sur le RPI2JAMMA, pour finir démarrez le RPI2JAMMA.
 
-### BIOS Neo Geo
+#### BIOS Neo Geo
 Le pack Neo Geo proposé sur le forum Neo-Arcadia fournit les différents BIOS (dans le répertoire "BIOS") et propose par défaut un BIOS de type "unibios".
 Si vous souhaitez en utiliser un autre, renommez simplement le fichier du BIOS choisi en "neogeo.zip" et prenez soin au préalable de renommer le fichier correspondant au bios actuel pour ne pas le perdre (ex : neogeo_UNIBIOS.zip).
 
-### Autoboot
+#### Autoboot
 L'autoboot permet de lancer un jeu automatiquement au démarrage du RPI2JAMMA. Modifiez le fichier autoboot.txt dans le dossier Config_RPI2XXXXX qui se trouve à la racine de la clé USB.
 Le fichier doit contenir les deux lignes suivantes :
 ```
@@ -203,10 +203,11 @@ game=mslug.zip
 ```
 Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ (Edition > Convertir les sauts de ligne > Convertir en format Unix).
 
-### RetroAchievements
+#### RetroAchievements
 Les retroachievements sont des succès/trophées à débloquer en jeu en réalisant certaines actions. Ce système est connu sur les consoles de nouvelle génération et grâce à la plateforme https://retroachievements.org il est possible de faire la même chose avec les jeux "rétro".
 
 Prérequis :
+
 * Créer un compte sur le site https://retroachievements.org
 * Connecter votre RPI2XXXXX à internet
 
@@ -229,19 +230,19 @@ Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ 
 | cheevos_username             | Saisir votre nom d'utilisateur.                                       |
 | cheevos_password             | Saisir votre mot de passe.                                            |
 
-### Header Interactif (option en développement)
+#### Header Interactif (option en développement)
 Le RPI2JAMMA offre la possibilité d'avoir un "header" intéractif en connectant un écran additionel à l'aide d'un adaptateur "USB vers DVI" ou "USB vers VGA" compatible avec la norme __"DisplayLink"__. Les médias affichés seront ceux des jeux contenus sur la clé USB.
 
-### Jouer à un jeu vertical sur un écran horizontal
+#### Jouer à un jeu vertical sur un écran horizontal
 Commentez la modeline correspondante dans le fichier "modeline.txt" situé dans le répertoire du système concerné. Commenter signifie simplement ajouter un # en début de ligne, exemple :
 ```
 # mslug.zip;modeline "320x224_59.185606" 6.136900 [...]
 ```
 
-### Lecteur vidéo
+#### Lecteur vidéo
 Un lecteur vidéo existe (.avi .AVI .mkv .MKV), il suffit de mettre des vidéos dans le répertoire __Videos__ situé à la racine de la clé USB.
 
-### Changer le thème du menu
+#### Changer le thème du menu
 Depuis le menu EmulationStation, allez dans "UI Settings > Theme Set" puis choisissez le thème (voir tableau ci-dessous).
 
 | Thème               | Description                                                                 |
@@ -254,7 +255,7 @@ Depuis le menu EmulationStation, allez dans "UI Settings > Theme Set" puis chois
 
 Pour afficher les images correspondantes à la place des vidéos, renommer le dossier __video__ avec un autre nom.
 
-### Activer le mode kiosq ou kid
+#### Activer le mode kiosq ou kid
 Depuis le menu EmulationStation, allez dans "UI Settings > UI MODE" 
 
 | Option | Description                                                    |
@@ -264,7 +265,7 @@ Depuis le menu EmulationStation, allez dans "UI Settings > UI MODE"
 
 Pour débloquer l'accès au menu EmulationStation, faire le Konami Code dans le menu.
 
-### Fonctionnement des médias
+#### Fonctionnement des médias
 Dans chaque répertoire dédié à un émulateur il y a quatre répertoires :
 
 * __videos__       : previews vidéo (compatible avec les thèmes RPI2X_YOKO43 et RPI2X_TATE43)
@@ -292,245 +293,49 @@ Si le dossier "videos" n'existe pas ou s'il a été renommé : les images prése
 
 Lorsqu'on utilise le thème RPI2X_YOKO ou RPI2X_TATE seules les images présentes dans le dossier "images_pixel" et indiquées entre les balises ```<image></image>``` seront utilisées. En résumé, il n'y a pas de preview vidéo avec les thèmes RPI2X_YOKO ou RPI2X_TATE.
 
+## Dépannages
 
+__Pas d'image alors que le RPi est allumé (diode active et fixe)__<br>
+L’image SD est mal enregistrée, veuillez recommencer la procédure ou essayer avec une autre carte SD.
 
-## Horizontal Rules
+__Pas d'image alors que le RPi est allumé (diode active et clignotante au démarrage)__<br>
+Vérifiez le branchement de la clé USB, s’il n’y a pas de clé la distribution ne démarre pas.
 
-___
+__L'émulation de jeux NEOGEO ne fonctionne pas__<br>
+Dans la clé USB, vérifiez la présence du BIOS Neo Geo dans le dossier "neogeo".
 
----
+__L'émulation de jeux PGM ne fonctionne pas__<br>
+Dans la clé USB, vérifiez la présence du BIOS PGM dans le dossier de l'émulateur concerné.
 
-***
+__Impossible d'accéder au menu EmulationStation__<br>
+Le mode kiosq ou kid a dû être activé et masque les menus configuration. Pour débloquer l’accès faites le Konami Code dans le menu principal.
 
+__Si votre problème n’est pas évoqué ici__ vous pouvez venir échanger à ce sujet, avec le sourire, sur le forum de Neo-Arcadia.
 
-## Typographic replacements
+## FAQ
+__Une adresse pour télécharger les bonnes roms ?__
+Non. Cependant sur le forum Neo-Arcadia, la « RPI-Team » mets à disposition des packs de médias triés pour le RPI2JAMMA.
 
-Enable typographer option to see result.
+__Quel modèle de RPi est le plus adapté ?__
+Le RPi 3b ou RPi 3b+, le deuxième ayant plus de puissance il s’avère être le meilleur choix.
+Bien que nous y travaillons d'arrache-pied, le RPi 4 n'est pas supporté pour le moment à cause de problèmes techniques bloquants.
 
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+__Peut-on jouer sur un écran Vertical (tate) ?__
+Oui. Le RPI2JAMMA peut adapter son affichage à un écran horizontal ou vertical, l'option est accessible dans le menu principal.
 
-test.. test... test..... test?..... test!....
+__Quelle différence entre Mame, FBA et AdvanceMame ?__
+Les trois émulent des systèmes arcade mais certains jeux passent mieux sur l’un ou l’autre. Globalement les jeux les plus anciens sur MAME, les plus récents sur FBA ou AdvanceMame.
 
-!!!!!! ???? ,,  -- ---
+__Quelles sont les versions des émulateurs arcade et des romset ?__
+A l’heure actuelle (04/2020) :
+MAME 2010 = set MAME 0.139
+MAME 2003 = set MAME 0.78
+FBA = set FBA v0.2.97.42
+FBA 2012 = set FBA v0.2.97.30
+AdvanceMame 3.6 = set MAME 0.106
 
-"Smartypants, double quotes" and 'single quotes'
+__Le RPI2JAMMA est-il compatible avec un écran 31khz ?__
+Non, il existe pour cela le RPI2NUC.
 
-
-## Emphasis
-
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Strikethrough~~
-
-
-## Blockquotes
-
-
-> Blockquotes can also be nested...
->> ...by using additional greater-than signs right next to each other...
-> > > ...or with spaces between arrows.
-
-
-## Lists
-
-Unordered
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-    + Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-+ Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-
-## Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-
-Block code "fences"
-
-```
-Sample text here...
-```
-
-Syntax highlighting
-
-``` js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-```
-
-## Tables
-
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-Right aligned columns
-
-| Option | Description |
-| ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
-
-## Images
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
-- 19^th^
-- H~2~O
-
-
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-==Marked text==
-
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-:   Definition 1
-with lazy continuation.
-
-Term 2 with *inline markup*
-
-:   Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-_Compact style:_
-
-Term 1
-  ~ Definition 1
-
-Term 2
-  ~ Definition 2a
-  ~ Definition 2b
-
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-*[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-*here be dragons*
-:::
-
-    © 2020 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
+__Peut-on modifier l’affichage ou les commandes d’un jeu ?__
+Oui, Start (5s) en jeu permet d’accéder à un menu de réglage avec plein d’options. Notez que ce menu n'est pas disponible pour tous les émulateurs.
