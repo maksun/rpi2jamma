@@ -113,6 +113,7 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | 09_Info | <p>Affiche la version courante des émulateurs et des romsets</p> |
 
 ## Contrôles
+### 
 #### Légende
 | Menu                 | Description                     |
 |----------------------|---------------------------------|
