@@ -113,7 +113,7 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | 09_Info | <p>Affiche la version courante des émulateurs et des romsets</p> |
 
 ## Contrôles
-### 
+### RPI2JAMMA
 #### Légende
 | Menu                 | Description                     |
 |----------------------|---------------------------------|
@@ -130,24 +130,24 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 | Menu EmulationStation | Start       |
 
 #### En jeu
-| Menu | Description |
-|------|-------------|
-| Quitter | Start (0,5s) + B2 |
-| Créditer | Start (0,5s) + B1 |
-| Pause | Start (0,5s) + Bas |
-| Volume - / + | Start (0,5s) + Gauche / Droite |
-| Options émulateur | Start P1 (5s) |
-| Test mode | Start P2 (5s) |
+| Menu                   | Description                    |
+|------------------------|--------------------------------|
+| Quitter                | Start (0,5s) + B2              |
+| Créditer               | Start (0,5s) + B1              |
+| Pause                  | Start (0,5s) + Bas             |
+| Volume - / +           | Start (0,5s) + Gauche / Droite |
+| Options émulateur      | Start P1 (5s)                  |
+| Test mode              | Start P2 (5s)                  |
 | Menu UniBios (Neo Geo) | Start P1 (0,5s) + B1 + B2 + B3 |
 
 #### Émulation Amstrad
-| Menu | Description |
-|------|-------------|
-| Touche "Enter" | Start |
-| Barre d'espace | B4 |
-| Touche "Y" | B5 |
-| Touche "N" | B6 |
-| Option | Start (5s) |
+| Menu           | Description |
+|----------------|-------------|
+| Touche "Enter" | Start       |
+| Barre d'espace | B4          |
+| Touche "Y"     | B5          |
+| Touche "N"     | B6          |
+| Option         | Start (5s)  |
 
 #### Émulation Atari
 | Menu           | Description |          |
@@ -167,10 +167,10 @@ Si votre borne est 3 ou 4 joueurs, connectez les J3 & J4 (plus les "Kick Harness
 Le bouton de service et le monnayeur de la borne ont leurs fonctions normales.
 
 ## Options avancées
-#### Réseau
-##### Ethernet
+### Réseau
+#### Ethernet
 Connectez un câble RJ45 entre le RPi et votre box Internet, celle-ci attribuera automatiquement une adresse IP au RPI2JAMMA (via le protocole DHCP).
-##### WiFi
+#### WiFi
 Éditez le fichier wifi_config.txt dans le dossier Config_RPI2XXXXX qui se trouve à la racine de la clé USB puis modifiez les deux lignes suivantes :
 ```
 psk="la_clé_de_votre_réseau_wifi"
@@ -179,18 +179,18 @@ ssid="le_nom_de_votre_réseau_wifi"
 Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ (Edition > Convertir les sauts de ligne > Convertir en format Unix)
 Puis activez le wifi dans le menu principal : 08_WIFI.
 
-#### Ajout de roms
-##### Via le réseau
+### Ajout de roms
+#### Via le réseau
 Depuis votre ordinateur, saisissez \\RPI2JAMMA\UsbKey\roms dans l'explorateur Windows. Ajoutez des ROMs dans le dossier correspondant à l'émulateur de votre choix puis redémarrez le RPI2JAMMA afin de mettre à jour la liste des ROMs.
 
-##### Via la clé USB
+#### Via la clé USB
 Éteignez le RPI2JAMMA puis débranchez la clé USB. Branchez-là sur votre ordinateur puis ajoutez des ROMs dans le dossier correspondant à l'émulateur de votre choix. Débranchez proprement la clé USB de votre ordinateur puis branchez-là sur le RPI2JAMMA, pour finir démarrez le RPI2JAMMA.
 
-#### BIOS Neo Geo
+### BIOS Neo Geo
 Le pack Neo Geo proposé sur le forum Neo-Arcadia fournit les différents BIOS (dans le répertoire "BIOS") et propose par défaut un BIOS de type "unibios".
 Si vous souhaitez en utiliser un autre, renommez simplement le fichier du BIOS choisi en "neogeo.zip" et prenez soin au préalable de renommer le fichier correspondant au bios actuel pour ne pas le perdre (ex : neogeo_UNIBIOS.zip).
 
-#### Autoboot
+### Autoboot
 L'autoboot permet de lancer un jeu automatiquement au démarrage du RPI2JAMMA. Modifiez le fichier autoboot.txt dans le dossier Config_RPI2XXXXX qui se trouve à la racine de la clé USB.
 Le fichier doit contenir les deux lignes suivantes :
 ```
@@ -204,7 +204,7 @@ game=mslug.zip
 ```
 Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ (Edition > Convertir les sauts de ligne > Convertir en format Unix).
 
-#### RetroAchievements
+### RetroAchievements
 Les retroachievements sont des succès/trophées à débloquer en jeu en réalisant certaines actions. Ce système est connu sur les consoles de nouvelle génération et grâce à la plateforme https://retroachievements.org il est possible de faire la même chose avec les jeux "rétro".
 
 Prérequis :
@@ -231,19 +231,19 @@ Sous Windows il faut convertir le fichier en format Unix à l'aide de Notepad++ 
 | cheevos_username             | Saisir votre nom d'utilisateur.                                       |
 | cheevos_password             | Saisir votre mot de passe.                                            |
 
-#### Header Interactif (option en développement)
+### Header Interactif (option en développement)
 Le RPI2JAMMA offre la possibilité d'avoir un "header" intéractif en connectant un écran additionel à l'aide d'un adaptateur "USB vers DVI" ou "USB vers VGA" compatible avec la norme __"DisplayLink"__. Les médias affichés seront ceux des jeux contenus sur la clé USB.
 
-#### Jouer à un jeu vertical sur un écran horizontal
+### Jouer à un jeu vertical sur un écran horizontal
 Commentez la modeline correspondante dans le fichier "modeline.txt" situé dans le répertoire du système concerné. Commenter signifie simplement ajouter un # en début de ligne, exemple :
 ```
 # mslug.zip;modeline "320x224_59.185606" 6.136900 [...]
 ```
 
-#### Lecteur vidéo
+### Lecteur vidéo
 Un lecteur vidéo existe (.avi .AVI .mkv .MKV), il suffit de mettre des vidéos dans le répertoire __Videos__ situé à la racine de la clé USB.
 
-#### Changer le thème du menu
+### Changer le thème du menu
 Depuis le menu EmulationStation, allez dans "UI Settings > Theme Set" puis choisissez le thème (voir tableau ci-dessous).
 
 | Thème               | Description                                                                 |
@@ -256,7 +256,7 @@ Depuis le menu EmulationStation, allez dans "UI Settings > Theme Set" puis chois
 
 Pour afficher les images correspondantes à la place des vidéos, renommer le dossier __video__ avec un autre nom.
 
-#### Activer le mode kiosq ou kid
+### Activer le mode kiosq ou kid
 Depuis le menu EmulationStation, allez dans "UI Settings > UI MODE" 
 
 | Option | Description                                                    |
@@ -266,7 +266,7 @@ Depuis le menu EmulationStation, allez dans "UI Settings > UI MODE"
 
 Pour débloquer l'accès au menu EmulationStation, faire le Konami Code dans le menu.
 
-#### Fonctionnement des médias
+### Fonctionnement des médias
 Dans chaque répertoire dédié à un émulateur il y a quatre répertoires :
 
 * __videos__       : previews vidéo (compatible avec les thèmes RPI2X_YOKO43 et RPI2X_TATE43)
