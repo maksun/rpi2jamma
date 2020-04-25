@@ -23,7 +23,9 @@ Cette carte a été créée, fabriquée et distribuée par « aje_fr ». Elle se
 
 ## Schéma de présentation
 
-IMAGE
+## Images
+
+![Visuel](images/schema.png)
 
 ## Les différents connecteurs
 
