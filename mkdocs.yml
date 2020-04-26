@@ -1,6 +1,6 @@
 site_name: RPI2JAMMA Documentation
 
-pages:
+nav:
   - Home: 'index.md'
 
 theme: readthedocs
