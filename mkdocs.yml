@@ -10,4 +10,4 @@ markdown_extensions:
   - footnotes
   - toc:
       permalink: "#"
-      toc_depth: "2-3"
+      toc_depth: "2"
