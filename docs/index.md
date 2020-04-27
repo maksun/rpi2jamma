@@ -4,9 +4,6 @@ Le RPI2JAMMA est une carte permettant de connecter un Raspberry Pi (RPi) sur une
 
 Cette carte a été créée, fabriquée et distribuée par « aje_fr ». Elle se destine à un usage de loisir privé et n’est en aucun cas destinée à une utilisation en exploitation commerciale ou à un commerce de revente.
 
-* [ ] Unchecked
-* [x] Checked
-
 ![RPI2JAMMA](images/rpi2jamma.jpg)
 
 ## Spécifications
