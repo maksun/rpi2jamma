@@ -1,7 +1,3 @@
-??? Note
-    Test de note repliable
-
-
 ---
 __Advertisement :)__
 
