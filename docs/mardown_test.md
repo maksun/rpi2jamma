@@ -1,33 +1,7 @@
+??? Note
+    Test de note repliable
 
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@maksun
-Learn Git and GitHub without any code!
 
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-maksun /
-rpi2jamma
-
-1
-0
-
-    0
-
-Code
-Issues 0
-Pull requests 0
-Actions
-Projects 0
-Wiki
-Security 0
-Insights
-Settings
-rpi2jamma/first_test_in_markdown
-@maksun maksun Test initial d2c6c84 26 minutes ago
-245 lines (138 sloc) 4.52 KB
 ---
 __Advertisement :)__
 
