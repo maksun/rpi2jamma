@@ -6,6 +6,7 @@ pages:
 theme: readthedocs
 
 markdown_extensions:
+  - pymdownx.details
   - admonition
   - footnotes
   - toc:
